@@ -34,8 +34,8 @@ int main(int argc, char **argv)
 	fread(inimg, sizeof(ubyte), imgSize, fp);
 
 	for(int i=0 ; i < imgSize; i++){
-		//outimg[i+0] = inimg[i+0];
 		*(outimg+i) = *(inimg+i);
+		//outimg[i+0] = inimg[i+0];
 		//outimg[i+1] = inimg[i+1];
 		//outimg[i+2] = inimg[i+2];
 	}
@@ -73,6 +73,7 @@ int main(int argc, char **argv)
 		}
 	}
 	*/
+	
 	fwrite(&bmpHeader, sizeof(BITMAPFILEHEADER), 1, fp);
 	fwrite(&bmpInfoHeader, sizeof(BITMAPINFOHEADER), 1, fp);
 
